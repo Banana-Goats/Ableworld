@@ -1,19 +1,21 @@
 using System.Net;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Phone_EXP_Builder
 {
     public partial class Form1 : Form
     {
-        private Dictionary<string, string> nameToNumberDictionary;
+        private Dictionary<string, string> nameToNumberDictionary = new Dictionary<string, string>();
         private int maxPairsPerTab;
 
         public Form1()
         {
             InitializeComponent();
             GenerateOutputButton.Click += GenerateOutputButton_Click;
-        }
+            PopulateDictionary();
 
+        }
         private void GenerateOutputButton_Click(object sender, EventArgs e)
         {
             // Initialize the output string with pre-chosen text
@@ -83,5 +85,46 @@ namespace Phone_EXP_Builder
             }
         }
 
+        private void LookupNumbersButton_Click(object sender, EventArgs e)
+        {
+            int maxPairsPerTab = 60;
+
+            foreach (Control control in tabControl1.Controls)
+            {
+                if (control is TabPage tabPage)
+                {
+                    for (int i = 1; i <= maxPairsPerTab; i++)
+                    {
+                        string nameTextBoxName = $"name{i}";
+                        string numberTextBoxName = $"number{i}";
+
+                        // Attempt to get the values from the corresponding text boxes
+                        string name = tabPage.Controls[nameTextBoxName]?.Text;
+
+                        if (!string.IsNullOrWhiteSpace(name))
+                        {
+                            if (nameToNumberDictionary.TryGetValue(name, out string number))
+                            {
+                                tabPage.Controls[numberTextBoxName].Text = number;
+                            }
+                            else
+                            {
+                                MessageBox.Show($"No number found for name: {name}");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void PopulateDictionary()
+        {
+            // Clear the dictionary to start fresh
+            nameToNumberDictionary.Clear();
+
+            // Populate the dictionary with the provided names and numbers
+            nameToNumberDictionary["John"] = "009";
+            nameToNumberDictionary["Sam"] = "008";
+            nameToNumberDictionary["Tom"] = "007";
+        }
     }
 }
