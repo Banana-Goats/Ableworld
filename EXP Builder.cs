@@ -13,6 +13,7 @@ namespace Phone_EXP_Builder
         {
             InitializeComponent();
             GenerateOutputButton.Click += GenerateOutputButton_Click;
+            nameToNumberDictionary = new Dictionary<string, string>();
             PopulateDictionary();
 
         }
