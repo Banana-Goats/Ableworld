@@ -6,7 +6,7 @@ namespace Phone_EXP_Builder
 {
     public partial class Form1 : Form
     {
-        private Dictionary<string, string> nameToNumberDictionary = new Dictionary<string, string>();
+        private Dictionary<string, string> nameToNumberDictionary;
         private int maxPairsPerTab;
 
         public Form1()
@@ -17,6 +17,7 @@ namespace Phone_EXP_Builder
             PopulateDictionary();
 
         }
+
         private void GenerateOutputButton_Click(object sender, EventArgs e)
         {
             // Initialize the output string with pre-chosen text
@@ -122,10 +123,30 @@ namespace Phone_EXP_Builder
             // Clear the dictionary to start fresh
             nameToNumberDictionary.Clear();
 
-            // Populate the dictionary with the provided names and numbers
-            nameToNumberDictionary["John"] = "009";
-            nameToNumberDictionary["Sam"] = "008";
-            nameToNumberDictionary["Tom"] = "007";
+            // Path to your CSV file
+            string csvFilePath = "C:\\\\Users\\erenner\\Downloads\\Contacts.csv";
+
+            try
+            {
+                // Read all lines from the CSV file
+                string[] lines = File.ReadAllLines(csvFilePath);
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+
+                    if (parts.Length == 2)
+                    {
+                        string name = parts[0].Trim();
+                        string number = parts[1].Trim();
+                        nameToNumberDictionary[name] = number;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while reading the CSV file: {ex.Message}");
+            }
         }
     }
 }
