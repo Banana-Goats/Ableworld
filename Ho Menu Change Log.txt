@@ -1,5 +1,7 @@
 1.1.0\n
-- Added functionaility 
+- Added functionaility\n
 
 1.0.0
 - Main Release
+
+fgrgrgreg
