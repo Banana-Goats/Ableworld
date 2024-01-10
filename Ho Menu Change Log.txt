@@ -2,6 +2,7 @@
 - Added functionaility to Message() a remote pc if a ping fails
 - Added option in Config section to chose whether someone is notified
 - Added option in Config section to type the PC to notifiy
+- Added Change Log in About - Help Section
 
 
 1.0.0
