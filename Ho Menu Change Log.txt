@@ -1,3 +1,11 @@
+2.0.0
+  - Added Permission System
+  - Added Login Account System
+  - Changed apth for PC's.CSV
+  - Config Page locked behind Permission
+  - Permissions Page locked behind Permission
+  - Commands Page locked behind Permission
+
 1.2.0
   - Added Info Tab with Vat Pro account info and setup info
 
