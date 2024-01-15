@@ -1,3 +1,7 @@
+2.1.0
+  - Added the ability to unlock AD accounts
+  - Added the ability to untick Password Never Expires
+
 2.0.0
   - Added Permission System
   - Added Login Account System
