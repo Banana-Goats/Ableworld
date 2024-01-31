@@ -1,3 +1,8 @@
+2.2.0
+  - Added the ability to Reset AD Password
+  - Cleared up the Active Directory Page
+  - RetrieveRemotePCInformation() will no longer be called on app startup this it to prveent an issue where the app would try and get PC info for an offline machine while loading, casuing it to freeze for 30 seconds
+
 2.1.0
   - Added the ability to unlock AD accounts
   - Added the ability to untick Password Never Expires
