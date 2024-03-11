@@ -1,4 +1,4 @@
-2.2.0
+2.3.0
   - Changed the GL Code from 650025 to the correct 640025
 
 2.2.0
