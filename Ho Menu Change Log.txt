@@ -1,3 +1,8 @@
+2.4.0
+  - Added functionaility for Auto Completing names when in Active Directory Page
+  - List is generate on App load that pulls all AD Usernames
+  - Security groups will be displayed for AD Users
+
 2.3.0
   - Changed the GL Code from 650025 to the correct 640025
 
