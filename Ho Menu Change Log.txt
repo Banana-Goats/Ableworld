@@ -1,3 +1,12 @@
+2.6.0
+  - Fixed issues where  profit centres went calculating correctly
+  - streamlined the code
+  - removed the function to refresh excel data from the GetData Function
+
+2.5.0
+  - Added Sales Figures Under Bonus Section
+  - Sales Figures wil show all profit centres
+
 2.4.0
   - Added Search function for AD Usernames
   - List is generate on App load that pulls all AD Usernames
