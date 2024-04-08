@@ -1,3 +1,11 @@
+3.0.0
+  - Permision System moved to an online database (Firebase)
+  - Code optimisations completed
+
+2.7.0
+  - added a permission for the Bonus page
+  - cleaned up old code
+
 2.6.0
   - Fixed issues where  profit centres went calculating correctly
   - streamlined the code
